@@ -4,7 +4,7 @@ def registrar_nota(alumnos, student_id, nota):
     for alumno in alumnos:
         if alumno["student_id"] == student_id:
             alumno["nota"] = nota
-            return f"Nota registrada para {alumno['nombre']}."
+            return f"Nota registrada para {alumno["nombre"]}."
     raise ValueError("No se encontró ningún alumno con ese ID.")
 
 
@@ -14,7 +14,7 @@ def media_clase(alumnos):
         if alum["nota"] is not None:
             notas.append(alum["nota"])
     if len(notas) == 0:
-        raise ValueError("No hay notas registradas.")
+        raise ValueError("No hay notas.")
     suma = 0
     for n in notas:
         suma += n
@@ -26,7 +26,7 @@ def mostrar_aprobados(alumnos):
     hay_aprobados = False
     for alum in alumnos:
         if alum["nota"] is not None and alum["nota"] >= 5:
-            texto += f"{alum['nombre']} - {alum['nota']}\n"
+            texto += f"{alum["nombre"]}: {alum["nota"]}\n"
             hay_aprobados = True
     if not hay_aprobados:
         return "No hay aprobados."
@@ -38,7 +38,7 @@ def mostrar_suspensos(alumnos):
     hay_suspensos = False
     for alum in alumnos:
         if alum["nota"] is not None and alum["nota"] < 5:
-            texto += f"{alum['nombre']} - {alum['nota']}\n"
+            texto += f"{alum["nombre"]}: {alum["nota"]}\n"
             hay_suspensos = True
     if not hay_suspensos:
         return "No hay suspensos."

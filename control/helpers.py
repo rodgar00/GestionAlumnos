@@ -1,4 +1,4 @@
-def pedir_opcion():
+def input_user_opcion():
     try:
         opcion = int(input("\nElige una opción: "))
         return opcion
@@ -7,12 +7,12 @@ def pedir_opcion():
         return None
 
 
-def pedir_nombre():
+def input_user_nombre():
     nombre = input("Introduce el nombre del alumno: ")
     return nombre
 
 
-def pedir_id():
+def input_user_id():
     try:
         student_id = int(input("Introduce el ID del alumno: "))
         return student_id
@@ -21,7 +21,7 @@ def pedir_id():
         return None
 
 
-def pedir_nota():
+def input_user_nota():
     try:
         nota = float(input("Introduce la nota (0-10): "))
         return nota
